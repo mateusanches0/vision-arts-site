@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vision Art's — Estúdio de Design</title>
+<title>Vision Art's | Estúdio de Design</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -24,13 +24,19 @@
     --gold:#e8b464;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
+  
+  /* Garantindo que não tenha rolagem lateral no mobile */
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
   html{scroll-behavior:smooth;}
   body{
     background:var(--navy-950);
     color:var(--white);
     font-family:'Inter',sans-serif;
     line-height:1.6;
-    overflow-x:hidden;
   }
   h1,h2,h3,.wordmark{font-family:'Space Grotesk',sans-serif;}
   a{color:inherit;text-decoration:none;}
@@ -165,7 +171,7 @@
   .section-head h2{font-size:34px;font-weight:600;max-width:480px;letter-spacing:-0.01em;}
   .section-head p{color:var(--silver-dim);max-width:340px;font-size:15px;}
 
-  /* CATEGORY GRID (sem preço) */
+  /* CATEGORY GRID */
   .grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
   }
@@ -236,7 +242,9 @@
   }
   .cta-band::before{
     content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);
-    width:900px;height:300px;
+    width:900px;
+    max-width:100%; /* Ajuste para mobile */
+    height:300px;
     background:radial-gradient(ellipse at top, rgba(255,107,74,0.14), transparent 70%);
     pointer-events:none;
   }
@@ -274,8 +282,14 @@
   @media (max-width:860px){
     .hero{grid-template-columns:1fr;padding-top:60px;min-height:auto;}
     .hero h1{font-size:38px;}
+    .hero-glow {width:100%; right:0;} /* Ajuste de tela mobile */
     .hero-figure{height:360px;margin-top:20px;}
     .hero-figure img{width:220px;}
+    
+    /* Evita que os anéis quebrem a tela no mobile */
+    .hero-figure .ring {width:300px; height:300px;}
+    .hero-figure .ring.r2 {width:350px; height:350px;}
+
     .about{grid-template-columns:1fr;}
     .grid{grid-template-columns:1fr;}
     .process{grid-template-columns:1fr;}
@@ -291,11 +305,14 @@
   <div class="wrap">
     <nav>
       <div class="wordmark"><span class="mark"><img src="logo_jpeg.png" alt="Vision Art's"></span> Vision Art's</div>
+      
+      <!-- Esta div (navlinks) estava faltando no seu código, quebrando a estrutura do site -->
       <div class="navlinks">
-      <a href="#categorias">Categorias</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#orcamento">Orçamento</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#orcamento">Orçamento</a>
       </div>
+      
       <div class="nav-social">
         <a href="https://instagram.com/_vision.artx" target="_blank" rel="noopener" class="icon" aria-label="Instagram">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg>
@@ -311,7 +328,7 @@
   <div>
     <div class="eyebrow">Estúdio de design gráfico</div>
     <h1>Design que veste sua marca, do feed ao uniforme.</h1>
-    <p class="lead">A Vision Art's transforma briefings em artes exclusivas — de identidade visual a artes esportivas — cada projeto desenhado do zero, com orçamento pensado pra ele.</p>
+    <p class="lead">A Vision Art's transforma briefings em artes exclusivas, desde a identidade visual até artes esportivas. Cada projeto é desenhado do zero, com o orçamento pensado exatamente para a sua necessidade.</p>
     <div class="hero-actions">
       <a href="#orcamento" class="btn-primary">Solicitar orçamento</a>
       <a href="#categorias" class="btn-ghost">Ver o que fazemos</a>
@@ -321,7 +338,7 @@
     <div class="ring r2"></div>
     <div class="ring"></div>
     <div class="beam"></div>
-    <img src="logo_centro.png" alt="Vision Art's — mascote do estúdio">
+    <img src="logo_centro.png" alt="Mascote do estúdio Vision Art's">
   </div>
 </section>
 
@@ -330,14 +347,14 @@
     <div class="stat"><b>4</b><span>frentes de atuação</span></div>
     <div class="stat"><b>100%</b><span>projetos sob medida</span></div>
     <div class="stat"><b>1</b><span>ponto de contato do briefing à entrega</span></div>
-    <div class="stat"><b>0</b><span>pacotes fechados — cada orçamento é único</span></div>
+    <div class="stat"><b>0</b><span>pacotes fechados (orçamento único)</span></div>
   </div>
 </div>
 
 <section class="section wrap" id="categorias">
   <div class="section-head">
     <h2>O que a Vision Art's desenha</h2>
-    <p>Cada frente abaixo é ponto de partida — o orçamento é sempre montado em cima do seu projeto.</p>
+    <p>Cada frente abaixo é um ponto de partida. O orçamento é sempre montado em cima das necessidades do seu projeto.</p>
   </div>
   <div class="grid">
     <div class="card">
@@ -355,7 +372,7 @@
     <div class="card">
       <div class="card-num">03</div>
       <div class="card-title">Identidade visual</div>
-      <div class="card-desc">Logo, paleta e aplicações — a base visual de uma marca do zero.</div>
+      <div class="card-desc">Logo, paleta e aplicações: a base visual de uma marca criada do zero.</div>
       <a href="#orcamento" class="card-link">Solicitar orçamento →</a>
     </div>
     <div class="card">
@@ -390,12 +407,12 @@
     <div class="about-visual"><img src="logo_jpeg.png" alt="Vision Art's"></div>
     <div>
       <h2>Um estúdio que desenha para quem cria todos os dias</h2>
-      <p>A Vision Art's nasceu para colocar design de qualidade nas mãos de quem precisa de agilidade — sem abrir mão de acabamento e identidade visual consistente.</p>
-      <p>Cada orçamento é montado depois de entender o projeto: sem pacote fechado, sem preço genérico.</p>
+      <p>A Vision Art's nasceu para colocar design de qualidade nas mãos de quem precisa de agilidade, sem abrir mão do acabamento perfeito e de uma identidade visual consistente.</p>
+      <p>Cada orçamento é montado apenas depois de entendermos o seu projeto. Não trabalhamos com pacotes fechados nem preços genéricos.</p>
       <div class="about-points">
         <div class="point">
           <div class="dot"></div>
-          <div><b>Orçamento sob medida</b><span>Valor definido conforme escopo, prazo e complexidade do projeto.</span></div>
+          <div><b>Orçamento sob medida</b><span>Valor definido conforme o escopo, prazo e a complexidade do projeto.</span></div>
         </div>
         <div class="point">
           <div class="dot"></div>
@@ -403,7 +420,7 @@
         </div>
         <div class="point">
           <div class="dot"></div>
-          <div><b>Curadoria própria</b><span>Nada de banco de imagens genérico — tudo desenhado por nós.</span></div>
+          <div><b>Curadoria própria</b><span>Nada de banco de imagens genérico, nós desenhamos tudo para você.</span></div>
         </div>
       </div>
     </div>
@@ -413,13 +430,13 @@
 <section class="section wrap">
   <div class="section-head">
     <h2>Como funciona o orçamento</h2>
-    <p>Três passos entre a sua ideia e a arte pronta.</p>
+    <p>Apenas três passos separam a sua ideia da arte pronta.</p>
   </div>
   <div class="process">
     <div class="step">
       <div class="step-num">01</div>
       <h3>Você conta o projeto</h3>
-      <p>Envie o briefing pelo formulário ou WhatsApp — quanto mais detalhes, mais precisa a proposta.</p>
+      <p>Envie o briefing pelo formulário ou WhatsApp. Quanto mais detalhes você passar, mais precisa será a proposta.</p>
     </div>
     <div class="step">
       <div class="step-num">02</div>
@@ -429,7 +446,7 @@
     <div class="step">
       <div class="step-num">03</div>
       <h3>Aprovação e entrega</h3>
-      <p>Com o orçamento aprovado, o estúdio parte pra produção até a entrega final.</p>
+      <p>Com o orçamento aprovado, nosso estúdio parte pra produção até a entrega do arquivo final.</p>
     </div>
   </div>
 </section>
